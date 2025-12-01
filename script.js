@@ -39,11 +39,24 @@ async function shortenURL() {
 }
 
 
-function downloadQR() {
-    const qrImg = document.getElementById("qrImage").src;
-    
+async function downloadQR() {
+    const qrImgURL = document.getElementById("qrImage").src;
+
+    // Fetch the image as a blob (fixes CORS issues)
+    const response = await fetch(qrImgURL, { mode: "cors" });
+    const blob = await response.blob();
+
+    // Create a temporary URL for the blob
+    const blobURL = URL.createObjectURL(blob);
+
+    // Create download link
     const link = document.createElement("a");
-    link.href = qrImg;
+    link.href = blobURL;
     link.download = "qr_code.png";
+    document.body.appendChild(link);
     link.click();
+
+    // Cleanup
+    URL.revokeObjectURL(blobURL);
+    link.remove();
 }
