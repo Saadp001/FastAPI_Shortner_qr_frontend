@@ -12,7 +12,7 @@ A clean, modern UI built with **HTML + CSS + JavaScript**, connected to a FastAP
 
 ## ⚙️ Backend API
 
-API Repo → [https://github.com/Saadp001/FastAPI_Shortner_qr](https://github.com/Saadp001/FastAPI_Shortner_qr)
+API Repo → [https://github.com/Saadp001/FastAPI_Shortner_qr](https://github.com/Saadp001/FastAPI_Shortner_qr/docs)
 Live API → [https://fastapi-shortner-qr.onrender.com](https://fastapi-shortner-qr.onrender.com)
 
 ---
@@ -81,15 +81,3 @@ git clone https://github.com/Saadp001/FastAPI_Shortner_qr_frontend
 
 ---
 
-# 💬 Want more features?
-
-Dark mode, animations, analytics, custom short URLs — tell me!
-
----
-
-
-⭐ A fully polished LinkedIn post
-⭐ A project thumbnail/banner for GitHub + Medium
-⭐ A portfolio-friendly architecture diagram
-
-Just tell me!
