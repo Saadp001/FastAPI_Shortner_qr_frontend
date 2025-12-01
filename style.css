@@ -1,59 +1,172 @@
+/* ---------- GLOBAL STYLING ---------- */
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
+    font-family: "Inter", "Poppins", sans-serif;
+    background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
 }
 
+/* ---------- MAIN CARD ---------- */
+
 .container {
-    width: 380px;
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    width: 400px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     text-align: center;
+    animation: fadeIn 0.5s ease;
+    border: 1px solid rgba(255,255,255,0.4);
 }
 
-h1 {
-    margin-bottom: 20px;
+.container:hover {
+    transform: translateY(-4px);
+    transition: 0.2s ease-in-out;
 }
+
+/* ---------- LOGO ---------- */
+.logo {
+    width: 85px;
+    margin-bottom: 10px;
+    opacity: 0.95;
+}
+
+/* ---------- TITLE ---------- */
+
+h1 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #4f46e5, #6366f1);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* ---------- INPUT FIELD ---------- */
 
 input {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    padding: 14px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+    font-size: 15px;
+    transition: 0.2s;
+    background: rgba(255,255,255,0.8);
 }
+
+input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 6px rgba(99, 102, 241, 0.4);
+}
+
+/* ---------- BUTTON ---------- */
 
 button {
     width: 100%;
-    padding: 12px;
-    background: #2563eb;
+    padding: 14px;
+    background: linear-gradient(90deg, #4f46e5, #6366f1);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    transition: 0.2s ease;
 }
 
 button:hover {
-    background: #1e4fd7;
+    background: linear-gradient(90deg, #4338ca, #4f46e5);
+    transform: scale(1.02);
 }
 
+/* ---------- RESULT SECTION ---------- */
+
 #result {
-    margin-top: 20px;
+    margin-top: 24px;
+    padding: 18px;
     text-align: left;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    animation: fadeIn 0.4s ease;
 }
+
+#shortUrl {
+    color: #4f46e5;
+    font-weight: 600;
+    word-break: break-all;
+    text-decoration: underline;
+}
+
+#qrImage {
+    width: 160px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    animation: popIn 0.3s ease;
+}
+
+.qr-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+.qr-wrapper img {
+    width: 180px;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+
+/* ---------- DOWNLOAD  ---------- */
+.download-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    background: linear-gradient(90deg, #16a34a, #22c55e);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+.download-btn:hover {
+    background: linear-gradient(90deg, #15803d, #16a34a);
+    transform: scale(1.02);
+}
+
+
+
+/* ---------- UTILITY ---------- */
 
 .hidden {
     display: none;
 }
 
-#qrImage {
-    width: 150px;
-    margin-top: 10px;
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }

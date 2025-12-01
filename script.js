@@ -30,4 +30,20 @@ async function shortenURL() {
     // Set QR Code image
     document.getElementById("qrImage").src =
         `https://fastapi-shortner-qr.onrender.com/qr/${data.short_url}.png`;
+     
+    // Show Download Button
+    const downloadBtn = document.getElementById("downloadBtn");
+    downloadBtn.classList.remove("hidden");
+    downloadBtn.onclick = downloadQR;
+    
+}
+
+
+function downloadQR() {
+    const qrImg = document.getElementById("qrImage").src;
+    
+    const link = document.createElement("a");
+    link.href = qrImg;
+    link.download = "qr_code.png";
+    link.click();
 }
